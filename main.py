@@ -25,6 +25,7 @@ def search(q: str):
     javtitle = q
     nyaa = sukebei.SukebeiNyaa()
     res = nyaa.search(javtitle, category=2, filters=0)
+    res.sort(key=lambda x: int(x['seeders']), reverse=True)
     data = []
     count = 0
     for i in res:
